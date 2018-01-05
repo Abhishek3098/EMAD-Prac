@@ -29,9 +29,9 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="uid" type="text" class="validate">
-          <label for="icon_prefix">User ID</label>
+          <i class="material-icons prefix">email</i>
+          <input id="uid" type="email" class="validate">
+          <label for="icon_prefix">Email</label>
         </div>
       </div>
       <div class="row">
@@ -43,8 +43,8 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="pwd" type="text" class="validate">
+          <i class="material-icons prefix">lock</i>
+          <input id="pwd" type="password" class="validate">
           <label for="icon_prefix">password</label>
         </div>
       </div>
@@ -57,8 +57,8 @@
       </div>
        <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="city" type="number" class="validate">
+          <i class="material-icons prefix">add_location</i>
+          <input id="city" type="number" id="autocomplete-input" class="autocomplete">
           <label for="icon_prefix">city</label>
         </div>
       </div>
@@ -96,6 +96,16 @@
 	alert("submitted");
 	register(userid, pwd, name, age, city);
 });
+
+	$(document).ready(function() {
+		   $.ajax({
+            url: "http://localhost:3000/cities",
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+            }
+        });
+	});
 	</script>
 </body>
 </html>

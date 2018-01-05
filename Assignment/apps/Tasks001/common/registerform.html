@@ -29,9 +29,9 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="uid" type="text" class="validate">
-          <label for="icon_prefix">User ID</label>
+          <i class="material-icons prefix">email</i>
+          <input id="uid" type="email" class="validate">
+          <label for="icon_prefix">Email</label>
         </div>
       </div>
       <div class="row">
@@ -43,8 +43,8 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="pwd" type="text" class="validate">
+          <i class="material-icons prefix">lock</i>
+          <input id="pwd" type="password" class="validate">
           <label for="icon_prefix">password</label>
         </div>
       </div>
@@ -57,9 +57,9 @@
       </div>
        <div class="row">
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="city" type="number" class="validate">
-          <label for="icon_prefix">city</label>
+          <i class="material-icons prefix">add_location</i>
+          <input type="text" id="autocomplete" class="autocomplete">
+          <label for="city">City</label>
         </div>
       </div>
       <div class="row">
@@ -86,16 +86,33 @@
    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
    	
    	 <script>
-        $(".button-collapse").sideNav();
-        $("#submit").on('click',function(){
-	var userid= $("#uid").val();
-	var name = $("#name").val();
-	var pwd = $("#pwd").val();
-	var age = $("#age").val();
-	var city = $("#city").val();
-	alert("submitted");
-	register(userid, pwd, name, age, city);
-});
+      
+/* 	$(document).ready(function() {
+		   $.ajax({
+            url: "http://localhost:3000/cities",
+            type: 'GET',
+            success: function(res) {
+                data = res;
+            }
+        });
+        console.log(data);
+        
+	}); */
+	
+	$(document).ready(function() {
+		  $('input.autocomplete').autocomplete({
+    data: {
+      "Barmer": null,
+      "Jaipur": null,
+      "Ahmedabad": 'https://placehold.it/250x250'
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    onAutocomplete: function(val) {
+      // Callback function when value is autcompleted.
+    },
+    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+  });
+	});
 	</script>
 </body>
 </html>
