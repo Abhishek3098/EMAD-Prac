@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">   			
+</head>
+<body>
+    	<nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Register</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Splash Screen</a></li>
+            <li><a href="registerform.html">Form</a></li>
+            <li><a href="calculator.html">CalCulator</a></li>
+            <li><a href="sqlexample.html">MYSQL</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+           	<li><a href="index.html">Splash Screen</a></li>
+            <li><a href="registerform.html">Form</a></li>
+            <li><a href="calculator.html">CalCulator</a></li>
+            <li><a href="sqlexample.html">MYSQL</a></li>
+          </ul>
+        </div>
+</nav>
+	<div class="container">
+		<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="uid" type="text" class="validate">
+          <label for="icon_prefix">User ID</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="name" type="text" class="validate">
+          <label for="icon_prefix">name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="pwd" type="text" class="validate">
+          <label for="icon_prefix">password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="age" type="number" class="validate">
+          <label for="icon_prefix">age</label>
+        </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="city" type="number" class="validate">
+          <label for="icon_prefix">city</label>
+        </div>
+      </div>
+      <div class="row">
+      	<div class="input-field col s12">
+      		 <button class="btn waves-effect waves-light" style="width:100%" id="submit" type="submit" name="action">Submit
+			    <i class="material-icons right">send</i>
+			 </button>
+      	</div>
+      </div>
+      <div class="row">
+      	<div class="input-field col s12">
+      		 <button class="btn waves-effect waves-light" style="width:100%" type="reset" name="action">RESET
+			 </button>
+      	</div>
+      </div>
+    </form>
+  </div>
+	
+	</div>
+	<script src="js/initOptions.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/messages.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   	
+   	 <script>
+        $(".button-collapse").sideNav();
+        $("#submit").on('click',function(){
+	var userid= $("#uid").val();
+	var name = $("#name").val();
+	var pwd = $("#pwd").val();
+	var age = $("#age").val();
+	var city = $("#city").val();
+	alert("submitted");
+	register(userid, pwd, name, age, city);
+});
+	</script>
+</body>
+</html>

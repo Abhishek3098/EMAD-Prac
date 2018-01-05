@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>Tasks001</title>
+    		<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    		<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+   			<style>
+                body {
+                    margin-top: 0vh;
+                    font-family: 'Inknut Antiqua', Roboto, serif;
+                    font-size: 1em;
+                    font-weight: normal;
+                }
+                .screen {
+                    height: 90px;
+                }
+                .result {
+                    font-size: 2em;
+                    margin-top: 10em;
+                }
+                .btn{
+                    float: left;
+                    height: 80px;
+                    font-size: 1.2em;
+                    border: 1px solid;
+                    width: 5.4vw;
+                    margin-left: -0.6vw;
+                }
+                .btn-special {
+                    width: 10.7vw;
+                }
+                
+            
+                body {
+                    display: flex;
+                    min-height: 80vh;
+                    flex-direction: column;
+                }
+                
+                main {
+                    flex: 1 0 auto;
+                }
+                
+                @media (max-width: 600px){
+                    body {
+                        margin-top: 0vh;
+                    }
+                    .btn {
+                        width:21vw;
+                        margin-left: -2vw;
+                    }
+                    .btn-special {
+                        width: 43.5vw;
+                    }
+                }
+    </style>
+    	</head>
+    	<body>
+    	<nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Calculator</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Splash Screen</a></li>
+            <li><a href="registerform.html">Form</a></li>
+            <li><a href="calculator.html">CalCulator</a></li>
+            <li><a href="sqlexample.html">MYSQL</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+           	<li><a href="index.html">Splash Screen</a></li>
+            <li><a href="registerform.html">Form</a></li>
+            <li><a href="calculator.html">CalCulator</a></li>
+            <li><a href="sqlexample.html">MYSQL</a></li>
+          </ul>
+        </div>
+</nav>
+        <main id="main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 l4 offset-l4 xl4 offset-xl4">
+                            <div class="card-panel  blue-grey lighten-3 right-align screen">
+                                <span class="black-text result">0</span>
+                            </div>
+                            <div class="buttons">
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">C</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">+/-</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">%</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light orange accent-3 btn">&divide;</button></div>
+                
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">7</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">8</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">9</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light orange accent-3 btn">*</button></div>
+                
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">4</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">5</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">6</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light orange accent-3 btn">-</button></div>
+                
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">1</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">2</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">3</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light orange accent-3 btn">+</button></div>
+                
+                                <div class="col s6"><button type="button" class="waves-effect waves-light btn btn-special">0</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light btn">.</button></div>
+                                <div class="col s3"><button type="button" class="waves-effect waves-light orange accent-3 btn">=</button></div>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+    		<script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+    		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+        $(".button-collapse").sideNav();
+        $(document).ready(function () {
+    Materialize.toast("Hello World! This is a calculator using materialize", 2000 );
+    var scr = $('.result'),
+        res = 0,
+        op = "",
+        disp = true;
+    $('main').on('click','button',function () {
+        let input = $(this).text();
+        let scrtxt = $('.result').text();
+
+        switch (input){
+            case "C":
+                scr.text(0);
+                disp = true;
+                $("button:first").text("AC");
+                Materialize.toast("Clear!", 2000 );
+                break;
+            case "AC":
+                res = 0;
+                op = "";
+                disp = true;
+                scr.text("0");
+                Materialize.toast("Clear All!", 2000 );
+                break;
+            case "%":
+                scr.text(parseFloat(scrtxt,10)/100 + "");
+                disp = true;
+                break;
+            case "+/-":
+                scr.text(-parseFloat(scrtxt,10) + "");
+                break;
+
+            case "+":
+                updateResult(parseFloat(scrtxt),"+");
+                break;
+            case "-":
+                updateResult(parseFloat(scrtxt), "-");
+                break;
+            case "*":
+                updateResult(parseFloat(scrtxt), "*");
+                break;
+            case "\u00f7":
+                updateResult(parseFloat(scrtxt), "/");
+                break;
+            case "=":
+                updateResult(parseFloat(scrtxt), "=");
+                Materialize.toast("the result is: "+ res, 2000 );
+                break;
+
+            default:
+                if (scrtxt.length >= 15){
+                    Materialize.toast("Sorry! I can't hold so many numbers.", 2000 );
+                    break;
+                }
+                if (disp){
+                    scr.text(input);
+                    disp = false;
+                }
+                else {
+                    scr.text(scrtxt + input);
+                }
+                $("button:first").text("C");
+
+        }
+    });
+
+    function updateResult(num, opr) {
+        disp = true;
+        switch (op){
+            case "+":
+                res += num;
+                break;
+            case "-":
+                res -= num;
+                break;
+            case "*":
+                res *= num;
+                break;
+            case "/":
+                res /= num;
+                break;
+            default:
+                res = num === 0 ? res: num;
+                break;
+        }
+        op = opr == "=" ? "" : opr;
+        let scrtxt = res + "";
+        scr.text((scrtxt.length>15)?scrtxt.substr(0,15):scrtxt);
+    }
+
+});
+	</script>
+    	</body>
+</html>
