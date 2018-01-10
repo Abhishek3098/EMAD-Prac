@@ -30,35 +30,35 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">email</i>
-          <input id="uid" type="email" class="validate">
+          <input id="uid" type="email" class="validate" required="required">
           <label for="icon_prefix">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="name" type="text" class="validate">
+          <input id="name" type="text" class="validate" required="required">
           <label for="icon_prefix">name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">lock</i>
-          <input id="pwd" type="password" class="validate">
+          <input id="pwd" type="password" class="validate" required="required">
           <label for="icon_prefix">password</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="age" type="number" class="validate">
+          <input id="age" type="number" class="validate" required="required">
           <label for="icon_prefix">age</label>
         </div>
       </div>
        <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">add_location</i>
-          <input type="text" id="autocomplete" class="autocomplete">
+          <input type="text" id="autocomplete" class="autocomplete" required="required">
           <label for="city">City</label>
         </div>
       </div>
@@ -93,7 +93,7 @@
    	 	};	
    	 	//push nhi karna padega na
    	 		$.ajax({
-            url: "http://192.168.1.101:3000/cities",
+            url: "http://192.168.1.102:3000/cities",
             type: 'GET',
            
             success: function(res) {

@@ -2,6 +2,7 @@
     <wb-module deploy-name="Assignment">
         <wb-resource deploy-path="/" source-path="/apps/Tasks001/common"/>
         <wb-resource deploy-path="/" source-path="/apps/Tasks001/android"/>
+        <wb-resource deploy-path="/" source-path="/adapters/MyJAdapter/src"/>
         <property name="context-root" value="Assignment"/>
     </wb-module>
 </project-modules>
