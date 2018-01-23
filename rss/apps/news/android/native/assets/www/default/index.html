@@ -1,0 +1,103 @@
+<!DOCTYPE HTML><html>
+    <head>
+        <meta charset="UTF-8">
+        <title>news</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    		<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="jqueryMobile/jquery.mobile-1.3.1.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <style>
+    		.ndiv{
+    		background:#aaa;
+    		border:1px solid black;
+    		border-radius:10px;
+    		color:white;
+    		margin:5px;
+    		padding:10px;
+    		display:block;
+    		}
+    		.ndiv.hd{
+    		color:black;
+    		font-weight:bold;
+    		font-size:14px;
+    		display:block;
+    		}
+    		.ndiv.dt{
+    		color:red;
+    		font-style:italic;
+    		font-size:1opx;
+    		display:block;
+    		}
+    		.ndiv.link{
+    		color:red;
+    		text-decoration:underline;
+    		font-size:10px;
+    		display:block;
+    		text-align:right;
+    		}
+    		.ndiv.desc{
+    		color:black;
+    		font-family:'Times New Roman';
+    		display:block;
+    		}
+    		.ndiv.desc img{
+    		height:150px;
+    		font-family:'Times New Roman'; 
+    		display:block;
+    		overflow:auto;
+    		}
+    		</style>
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		 WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "news",
+   "APP_ID": "news",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "1.0",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "3093952004",
+   "WORKLIGHT_PLATFORM_VERSION": "7.1.0.0",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/news\/android\/"
+};
+</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script>window.$ = window.jQuery = WLJQ; </script>
+    		<script src="jqueryMobile/jquery.mobile-1.3.1.js"></script>
+    </head>
+    <body style="display: none;">
+        <div data-role="page" id="mainpage">
+            <div data-role="content" style="padding: 15px">
+                <h3>MyNewsApp</h3>
+            </div>
+            <div data-role="content">
+                <input onClick="myfunction('india')" type="button" value="India">
+    			<input onClick="myfunction('sports');" type="button" value="Sports">
+    			<input onClick="myfunction('tech');" type="button" value="Tech">
+            </div>
+        </div>
+        <div data-role="page" id="dispage">
+            <div data-role="header" style="padding: 15px">
+                <h3 id="newshead"></h3>
+            </div>
+            <div data-role="content" style="padding:15px">
+                <div id="mydisplay"></div>
+            </div>
+        </div>
+        <script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+    </body>
+</html>

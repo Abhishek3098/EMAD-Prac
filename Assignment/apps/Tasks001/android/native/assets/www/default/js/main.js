@@ -2,17 +2,10 @@
 /* JavaScript content from js/main.js in folder common */
 function wlCommonInit(){
 	
-		var data = {
-				firstName : "Gaurav",
-				lastName : "Bothra",
-		};
-//		WL.JSONStore.prototype.
-	// Common initialization code goes here
-		
-	
 }
 
-$(document).ready(function () {
+
+/*$(document).ready(function () {
     Materialize.toast("Hello World! This is a calculator using materialize", 2000 );
     var scr = $('.result'),
         res = 0,
@@ -103,7 +96,7 @@ $(document).ready(function () {
     }
 
 });
-
+*/
 function setsplash(){
 	setTimeout(nextScreen(), 10000);
 }
@@ -113,6 +106,12 @@ function nextScreen() {
 function displayData() {
 	console.log(JSON.stringify(WL.JSONStore.get("data")));
 }
+
+function loginFunction(){
+	var 
+}
+
+
 /* JavaScript content from js/main.js in folder android */
 // This method is invoked after loading the main HTML and successful initialization of the IBM MobileFirst Platform runtime.
 function wlEnvInit(){

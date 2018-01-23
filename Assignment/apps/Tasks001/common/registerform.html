@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">   			
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<script>window.$ = window.jQuery = WLJQ;</script>   			
 </head>
 <body>
     	<nav>
@@ -26,7 +27,6 @@
 </nav>
 	<div class="container">
 		<div class="row">
-    <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">email</i>
@@ -64,7 +64,7 @@
       </div>
       <div class="row">
       	<div class="input-field col s12">
-      		 <button class="btn waves-effect waves-light" style="width:100%" id="submit" type="submit" name="action">Submit
+      		 <button class="btn waves-effect waves-light" style="width:100%" id="save" onclick="registerFunction();">Submit
 			    <i class="material-icons right">send</i>
 			 </button>
       	</div>
@@ -75,7 +75,6 @@
 			 </button>
       	</div>
       </div>
-    </form>
   </div>
 	
 	</div>
@@ -87,13 +86,14 @@
    	
    	 <script>
    	 $(document).ready(function(){
+   	 $(".button-collapse").sideNav();
    	 	var cityData = null;
    	 	var item = {
    	 		"Ahmedabad" : "Gujarat",
    	 	};	
    	 	//push nhi karna padega na
    	 		$.ajax({
-            url: "http://192.168.1.102:3000/cities",
+            url: "http://100.100.223.57:3000/cities",
             type: 'GET',
            
             success: function(res) {

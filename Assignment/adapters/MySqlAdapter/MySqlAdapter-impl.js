@@ -8,7 +8,7 @@ function login( userId,  password){
 
 
 var registerStatment = WL.Server.createSQLStatement("insert into sinfo values(?,?,?,?,?)");
-function register(uid,pwd,name,age,city){
+function register(uid,name,pwd,age,city){
 	return WL.Server.invokeSQLStatement({
 		preparedStatement: registerStatment,
 		parameters:[uid,name,pwd,age,city]

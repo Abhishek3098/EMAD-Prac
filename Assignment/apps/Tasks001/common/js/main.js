@@ -1,16 +1,9 @@
 function wlCommonInit(){
 	
-		var data = {
-				firstName : "Gaurav",
-				lastName : "Bothra",
-		};
-//		WL.JSONStore.prototype.
-	// Common initialization code goes here
-		
-	
 }
 
-$(document).ready(function () {
+
+/*$(document).ready(function () {
     Materialize.toast("Hello World! This is a calculator using materialize", 2000 );
     var scr = $('.result'),
         res = 0,
@@ -101,7 +94,7 @@ $(document).ready(function () {
     }
 
 });
-
+*/
 function setsplash(){
 	setTimeout(nextScreen(), 10000);
 }
@@ -110,4 +103,42 @@ function nextScreen() {
 }
 function displayData() {
 	console.log(JSON.stringify(WL.JSONStore.get("data")));
+}
+function registerFunction() {
+	console.log('Button Clicked');
+	var uid, pwd, nm, ag, city;
+	uid = $('#uid').val();
+	pwd = $('#pwd').val();
+	nm = $('#name').val();
+	ag = $('#age').val();
+	city = $('#city').val();
+	console.log(1);
+	invocationData = {
+		adapter : 'MySqlAdapter',
+		procedure : 'register',
+		parameters : [ uid, nm, pwd, ag, city ]
+	};
+	console.log(2);
+	options = {
+		onSuccess : rScs,
+		onFailure : rFId
+	};
+	console.log(3);
+	WL.Client.invokeProcedure(invocationData, options);
+	console.log(4);
+}
+function rScs(result) {
+	console.log(5);
+	var flag = result.isSuccessful;
+	if (flag = true) {
+		alert("Account Registered Successfully");
+	} else {
+		alert("Please check your fields and retry again");
+	}
+}
+
+function rFId() {
+	console.log(6);
+	alert("Please check your connection with server and retry again");
+
 }
