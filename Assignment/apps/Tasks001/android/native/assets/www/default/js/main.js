@@ -107,10 +107,62 @@ function displayData() {
 	console.log(JSON.stringify(WL.JSONStore.get("data")));
 }
 
-function loginFunction(){
-	var 
+
+$('#save').on('submit',function(e){
+	e.preventDefualt();
+	registerFunction();
+});
+
+function rsSuccess(result)
+{
+
+	
+	//alert("register fail try again");
+	var flag=result.isSuccessFul;
+	if(flag=true)
+		 {
+		alert("successfull");
+		//alert("Record Affected:"+result.updateStatementResult.updateCount);
+		 
+		 }
+	
+	else
+	 {alert("failed");
+
+}}
+
+function rsFail()
+{
+	alert("register fail try again");
+
 }
 
+function registerFunction()
+{
+	console.log('Clicked!!!');
+	var email,pwd,nm,ag,city;
+	email=$('#uid').val();
+	pwd=$('#pwd').val();
+	nm=$('#name').val();
+	ag=$('#age').val();
+	city=$('#autocomplete').val();
+	console.log(email);
+	console.log(pwd);
+	console.log(nm);
+	console.log(ag);
+	console.log(city);
+	console.log('Done');
+	invocationData={
+			adapter:'MySqlAdapter',procedure:'register',parameters:[email,pwd,nm,ag,city]		
+			};
+
+			option={onSuccess:rsSuccess,
+					onFailure:rsFail};
+
+			console.log('Done');
+			WL.Client.invokeProcedure(invocationData,option);	
+	
+}
 
 /* JavaScript content from js/main.js in folder android */
 // This method is invoked after loading the main HTML and successful initialization of the IBM MobileFirst Platform runtime.

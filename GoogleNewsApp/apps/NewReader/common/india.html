@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/main.css">
+    		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+	<nav style="margin-bottom: 0%">
+			    <div class="nav-wrapper purple darken-4">
+			      <a href="#" class="brand-logo center">News App</a>
+			    </div>
+	</nav>
+	<div class="container">
+	<h5 class="center-align">Indian News</h5>
+	<div id="myCard">
+	</div>
+	</div>
+    		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    		<script type="text/javascript">
+    		$.ajax({
+    			url:"https://newsapi.org/v2/top-headlines?country=in&apiKey=d40f3f04c7194beeb9e92da9985f55c3",
+    			type: 'GET',
+    			Content:'application/json',
+    			success: function(res){
+    				if(res.status=='ok'){
+    					for(var i=0; i<=res.totalResults - 1; i++){
+    						$('#myCard').append("<div class='row'> "+
+        										"<div class='col s12'> "+
+          										"<div class='card'> "+
+            									"<div class='card-image'> "+
+              									"<img src="+res.articles[i].urlToImage+"> "+
+              									"<span class='card-title'>"+res.articles[i].title+"</span> "+
+            									"</div> "+
+            									"<div class='card-content'> "+
+              									"<p>"+res.articles[i].description+"</p>" +
+            									"</div> "+
+            									"<div class='card-action'> "+
+              									"<a href='"+res.articles[i].url+"'>Read More</a>"+
+              									"<b class='right-align'>"+res.articles[i].publishedAt+"</b>"+
+            									"</div> "+
+          										"<div> "+
+        										"</div> "+
+										        "</div>");
+    					}
+    					
+    				} else {
+    					console.log('Error in Connecting server....')
+    				}
+    			}
+    		});
+    		
+    	</script>
+</body>
+</html>

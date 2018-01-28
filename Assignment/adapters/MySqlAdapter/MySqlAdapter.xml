@@ -12,7 +12,7 @@
 
 	<displayName>MySqlAdapter</displayName>
 	<description>MySqlAdapter</description>
-	<connectivity>
+	<connectivity>	
 		<connectionPolicy xsi:type="sql:SQLConnectionPolicy">
 			<!-- Example for using a JNDI data source, replace with actual data source name -->
 			<!-- <dataSourceJNDIName>java:/data-source-jndi-name</dataSourceJNDIName> -->
@@ -20,15 +20,16 @@
 			<!-- Example for using MySQL connector, do not forget to put the MySQL connector library in the project's lib folder -->
 			<dataSourceDefinition>
 				<driverClass>com.mysql.jdbc.Driver</driverClass>
-				<url>jdbc:mysql://localhost:3306/mydb</url>
-			    <user>root</user>
-    			<password></password> 
+				<url>jdbc:mysql://au-cdbr-sl-syd-01.cleardb.net/ibmx_865d1eb961734a7</url>
+			    <user>b8db666813f904</user>
+    			<password>55293b9f</password> 
 			</dataSourceDefinition>
 		</connectionPolicy>
 	</connectivity>
 
-	<!-- Replace this with appropriate procedures -->
-	<procedure name="login"/>
+	<!-- Replace this with appropriate  procedures -->
+	<!-- <procedure name="login"/> -->
 	<procedure name="register"/>
-	<procedure name="delById"/>
+	<!-- <procedure name="delByid"/> -->
+
 </wl:adapter>

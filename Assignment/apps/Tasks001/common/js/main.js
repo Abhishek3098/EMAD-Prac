@@ -104,41 +104,60 @@ function nextScreen() {
 function displayData() {
 	console.log(JSON.stringify(WL.JSONStore.get("data")));
 }
-function registerFunction() {
-	console.log('Button Clicked');
-	var uid, pwd, nm, ag, city;
-	uid = $('#uid').val();
-	pwd = $('#pwd').val();
-	nm = $('#name').val();
-	ag = $('#age').val();
-	city = $('#city').val();
-	console.log(1);
-	invocationData = {
-		adapter : 'MySqlAdapter',
-		procedure : 'register',
-		parameters : [ uid, nm, pwd, ag, city ]
-	};
-	console.log(2);
-	options = {
-		onSuccess : rScs,
-		onFailure : rFId
-	};
-	console.log(3);
-	WL.Client.invokeProcedure(invocationData, options);
-	console.log(4);
-}
-function rScs(result) {
-	console.log(5);
-	var flag = result.isSuccessful;
-	if (flag = true) {
-		alert("Account Registered Successfully");
-	} else {
-		alert("Please check your fields and retry again");
-	}
+
+
+$('#save').on('submit',function(e){
+	e.preventDefualt();
+	registerFunction();
+});
+
+function rsSuccess(result)
+{
+
+	
+	//alert("register fail try again");
+	var flag=result.isSuccessFul;
+	if(flag=true)
+		 {
+		alert("successfull");
+		//alert("Record Affected:"+result.updateStatementResult.updateCount);
+		 
+		 }
+	
+	else
+	 {alert("failed");
+
+}}
+
+function rsFail()
+{
+	alert("register fail try again");
+
 }
 
-function rFId() {
-	console.log(6);
-	alert("Please check your connection with server and retry again");
+function registerFunction()
+{
+	console.log('Clicked!!!');
+	var email,pwd,nm,ag,city;
+	email=$('#uid').val();
+	pwd=$('#pwd').val();
+	nm=$('#name').val();
+	ag=$('#age').val();
+	city=$('#autocomplete').val();
+	console.log(email);
+	console.log(pwd);
+	console.log(nm);
+	console.log(ag);
+	console.log(city);
+	console.log('Done');
+	invocationData={
+			adapter:'MySqlAdapter',procedure:'register',parameters:[email,pwd,nm,ag,city]		
+			};
 
+			option={onSuccess:rsSuccess,
+					onFailure:rsFail};
+
+			console.log('Done');
+			WL.Client.invokeProcedure(invocationData,option);	
+	
 }
