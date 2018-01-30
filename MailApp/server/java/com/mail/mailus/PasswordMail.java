@@ -13,8 +13,8 @@ import javax.mail.internet.MimeMessage;
 				public boolean sendMail(String to,String msgs,String s) throws MessagingException
 		{
 			String host="smtp.gmail.com";
-String username="keystroke165@gmail.com";//emailid
-			String password="8866295803";//emailid password
+String username="yourmailid";//emailid
+			String password="yourpassword";//emailid password
 			String subject=s;
 String body = msgs;
 	 Properties properties = new Properties();
