@@ -83,7 +83,6 @@
     <script src="js/messages.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-   	
    	 <script>
    	 $(document).ready(function(){
    	 $(".button-collapse").sideNav();
@@ -100,78 +99,22 @@
             	 for(var i = 0; i < res.length; ++i) {
             		var n = res[i].name.toString();
             		var s = res[i].image.toString();
-            		//console.log(n , "::", s);
    	         		item[n ] = s;
-   	         		//yh apne json bana rahe {mumbai : maharastra}
-   	         		//yeh kya kar raha hai
-   	         		
-   	         		// ab khali yh kaam kr iska jo output hain na
-   	         		// matlab item variable ko json me convert kr aur usko file me store kr de
-   	         		// fir uske liye webservice me 1 route bana na 
-   	         		// /cites/name  krke jo tere ko yh item wala data return kr ke dega
-   	         		// isse tuhje baar baar process krne ki jarur nhi padegi;
-   	         		// Process muje kah karni pad rahi hai vo toh client side ho rahi hai na
-   	         		/// haan wahi client side process hogi matlab jab tk yh data recive nhi hota aur peocess nhi hota teri application unresponsive rahegi
-   	         		// fir yh har ek client ke liye yhi krega 
-   	         		
-   	         		////  aur tera toh pc h jisme process ho rha h usnke toh mobile hoga
-   	         		// apn minimum 6 character rakte hai usme autocomplete me 6 character type karega tab tak toh load hojye ga na bhai
-   	         		//???? ???
             	}
             	
             	console.log(item);
-            	//toh yeh chalna chaiye,, hmm
                 }
-                //bhai data jo auto complete me hai usko object chaiye na tu array pass kar raha hai
-                // wo bhi h d
             });
-            // dekh yaha pe to city Data = res hai
-         	// wo pura json object hai
-         	// usko parse krna padega
-         	// kisme
-         	// abhi jo data hai apne paa wo {id : 1, 'Name' : null, 'state' : null} esa hai
-         	// usko {null : null} yh format me lana padega
-         	//ha toh isko issme format me udar se lau means web service se ya idhar convert karna padega
-         	// agar waha se layega toh processing time kam hoga
-         	// aur idhar la kr parse karega toh output me 50ms ya 500ms tk ka diff aayega jyada nhi
-            // 5000 line ko convert karo vese
-            // haan bhai program de karna
-            // tuje pta hai koi api ki site jo city return kar rahi hai only
-            //na 
-            //dek isko apn citydata.name karege to city ka naam aayega 
-            // or fire usko object me convert kardege
-            // jiski key hogi citydata.name and value hogi null
-            // and then data : objdata // in auto complete
-            //mene asa try kiya tha lekin muje juery puri nhi aati hai
+            
             $('input.autocomplete').autocomplete({
 			    data : item, 
-			    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+			    limit: 20,
 			    onAutocomplete: function(val) {
-			      // Callback function when value is autcompleted.
+			
 			    },
-			    minLength: 3, // The minimum length of the input for the autocomplete to start. Default: 1.
+			    minLength: 3,
 			  });
    	 });
-      
- 	/* $(document).ready(function() {
-		   $.ajax({
-            url: "http://localhost:3000/cities",
-            type: 'GET',
-            success: function(res) {
-            console.log(res);
-                $('input.autocomplete').autocomplete({
-    data: res.name,
-    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-    onAutocomplete: function(val) {
-      // Callback function when value is autcompleted.
-    },
-    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-  });
-            }
-        });
-        console.log(data);
-        
-	});  */
 	</script>
 </body>
 </html>
