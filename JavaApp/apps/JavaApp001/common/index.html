@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>JavaApp001</title>
+    		<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    		<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+    		<link rel="stylesheet" href="css/main.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    	</head>
+    	<body style="display: none;">
+    		<!--application UI goes here-->
+    		<select onchange="checkType(this.value)">
+    			<option value="default" disabled selected>Please Choose</option>
+    			<option value="int">INT</option>
+    			<option value="char">CHAR</option>
+    			<option value="float">FlOAT</option>
+    			<option value="double">DOUBLE</option>
+    		</select><br>
+    		<input type="text" id="resultComp" readonly="readonly">
+    		<input type="text" id="charac" maxlength="1">
+    		<input type="button" onclick="checkChar();" value="CHECK">
+    		<div id="resultComp2"></div>
+    		<script src="js/initOptions.js"></script>
+    		<script src="js/main.js"></script>
+    		<script src="js/messages.js"></script>
+    	</body>
+</html>
